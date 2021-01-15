@@ -1,15 +1,28 @@
+/**
+ * [ABSTRACT CLASS] Base class of managers
+ */
 class YTManager
 {
+    /**
+     * Constructor
+     */
     constructor()
     {
         if (new.target === YTManager)
             throw "Cannot construct Manager instances. Abstract class detected.";
 
+        //Cache for last loaded items
         this._cache = [];
     }
 
+    //Cache getter
     get cache() { return this._cache }
 
+    /**
+     * Lists requested items
+     * @param {*} query Parameters of the query
+     * @param {*} restApi Rest API to call 
+     */
     async list(query, restApi) 
     {
         try
@@ -25,6 +38,11 @@ class YTManager
         }
     };
 
+    /**
+     * [PRIVATE] Sends the list request to the Youtube Data API (recursive function)
+     * @param {*} query 
+     * @param {*} restApi 
+     */
     async _list(query, restApi)
     {
         const YTRequest = require("./request");
