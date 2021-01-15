@@ -1,14 +1,24 @@
 const YTPlaylist = require('./playlist');
 const YTManager = require('./manager');
-
+/**
+ * Playlists manager
+ */
 class YTPlaylists extends YTManager
 {
+    /**
+     * Constructor
+     * @param {Channel} channel Parent channel of the managed playlists
+     */
     constructor(channel)
     {
         super();
         this.channel = channel;
     }
 
+    /**
+     * returns the playlists of the channel whitch match with the query properties
+     * @param {*} query 
+     */
     async list(query)
     {
         query = query || {};
