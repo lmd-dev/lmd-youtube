@@ -7,3 +7,4 @@ node_modules/node-fetch/README.md
 node_modules/node-fetch/lib/index.es.js
 node_modules/node-fetch/lib/index.js
 node_modules/node-fetch/lib/index.mjs
+test/index.js

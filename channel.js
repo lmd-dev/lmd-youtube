@@ -10,7 +10,7 @@ class YTChannel
      * @param {*} data Initialization data 
      */
     constructor(data)
-    {
+    {        
         this.kind = data?.kind ?? this.kind;
         this.id = data?.id ?? this.kind;
         this.title = data?.snippet?.title ?? "";
