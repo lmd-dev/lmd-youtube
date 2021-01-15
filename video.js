@@ -1,3 +1,6 @@
+/**
+ * Represents a Youtube Video
+ */
 class YTVideo
 {
     constructor(data, channel = null, playlist = null)
@@ -13,6 +16,7 @@ class YTVideo
         this.description = data?.snippet?.description ?? "";
         this.thumbnails = data?.snippet?.thumbnails ?? {};
         this.position = data?.snippet?.position ?? 0;
+        this.tags = data?.snippet?.tags ?? [];
     }
 }
 
