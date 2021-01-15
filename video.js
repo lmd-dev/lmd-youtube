@@ -1,0 +1,19 @@
+class YTVideo
+{
+    constructor(data, channel = null, playlist = null)
+    {
+        this.channel = channel;
+        this.playlist = playlist;
+
+        this.kind = data?.kind ?? "";
+        this.id = data?.id ?? "";
+        
+        this.publishedAt = new Date(data?.snippet?.publishedAt) ?? null;
+        this.title = data?.snippet?.title ?? "";
+        this.description = data?.snippet?.description ?? "";
+        this.thumbnails = data?.snippet?.thumbnails ?? {};
+        this.position = data?.snippet?.position ?? 0;
+    }
+}
+
+module.exports = YTVideo;

@@ -1,0 +1,16 @@
+{  
+  "name": "lmd-youtube",
+  "version": "0.0.1",
+  "description": "Youtube Data API for NodeJS",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Les Moulins du Dev",
+  "license": "ISC",
+
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
