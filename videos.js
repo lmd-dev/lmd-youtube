@@ -1,8 +1,15 @@
 const YTManager = require('./manager');
 const YTVideo = require('./video');
-
+/**
+ * Videos manager
+ */
 class YTVideos extends YTManager
 {
+    /**
+     * Constructor
+     * @param {*} channel Parent channel of the video
+     * @param {*} playlist Parent playlist of the video
+     */
     constructor(channel, playlist)
     {
         super();
@@ -10,6 +17,10 @@ class YTVideos extends YTManager
         this.playlist = playlist;
     }
 
+    /**
+     * Returns videos of the associated playlist whitch match with the query properties
+     * @param {*} query 
+     */
     async list(query)
     {
         query = query || {};
