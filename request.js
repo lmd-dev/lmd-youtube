@@ -1,8 +1,14 @@
 const Youtube = require('./index');
 const fetch = require('node-fetch');
-
+/**
+ * Centralize requests to the Youtube Data API
+ */
 class YTRequest
 {
+    /**
+     * Send a request to the API
+     * @param {*} queryFields Parameters of the request
+     */
     static async send(queryFields)
     {
         let queryString = "";
