@@ -27,8 +27,6 @@ class YTRequest
                 queryString += value;
         }
 
-        console.log(queryString);
-
         let url = `https://www.googleapis.com/youtube/v3/${queryFields.restApi}?key=${Youtube.apiKey}${queryString}`;
 
         const response = await fetch(url, { method: queryFields.method });
