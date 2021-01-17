@@ -29,7 +29,7 @@ class YTManager
         {
             let data = await this._list(query, restApi);
 
-            return data.items;
+            return data?.items ?? [];
         }
         catch (error)
         {

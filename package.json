@@ -1,6 +1,6 @@
 {  
   "name": "lmd-youtube",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Youtube Data API for NodeJS",
   "main": "index.js",
   "devDependencies": {},

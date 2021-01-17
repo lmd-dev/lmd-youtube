@@ -21,9 +21,13 @@ class YTRequest
 
             if (value instanceof Array)
                 queryString += value.map((item) => { return item.trim(); }).join(",");
+            else if (value instanceof Date)
+                queryString += YTRequest.dateToTimestamp(value);
             else
                 queryString += value;
         }
+
+        console.log(queryString);
 
         let url = `https://www.googleapis.com/youtube/v3/${queryFields.restApi}?key=${Youtube.apiKey}${queryString}`;
 
@@ -31,6 +35,25 @@ class YTRequest
         const data = await response.json();
 
         return data;
+    }
+
+    /**
+     * Converts JavaScript Date to Timestamp string
+     * @param {*} date Date to convert
+     */
+    static dateToTimestamp(date)
+    {
+        if (!date || date instanceof Date === false)
+            return;
+
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+
+        return `${year}-${month < 10 ? "0" + month : month}-${day < 10 ? "0" + day : day}T${hours < 10 ? "0" + hours : hours}:${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}.000Z`;
     }
 }
 

@@ -8,9 +8,18 @@ class YTVideo
         this.channel = channel;
         this.playlist = playlist;
 
-        this.kind = data?.kind ?? "";
-        this.id = data?.id ?? "";
-        
+        if (data?.kind === "youtube#searchResult")
+        {
+            this.kind = data?.id?.kind ?? "";
+            this.id = data?.id?.videoId ?? "";
+
+        }
+        else
+        {
+            this.kind = data?.kind ?? "";
+            this.id = data?.id ?? "";
+        }
+
         this.publishedAt = new Date(data?.snippet?.publishedAt) ?? null;
         this.title = data?.snippet?.title ?? "";
         this.description = data?.snippet?.description ?? "";
