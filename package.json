@@ -4,6 +4,10 @@
   "description": "Youtube Data API for NodeJS",
   "main": "index.js",
   "devDependencies": {},
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/lmd-dev/lmd-youtube"
+  }
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
